@@ -32,11 +32,41 @@ const ContadorProvider = ({ children }) => {
   );
 }
 
+// Definimos un nuevo componente StyledButton utilizando styled-components
+const StyledButton = styled.button`
+ 
+
+	box-shadow:inset 0px -3px 7px 0px #29bbff;
+	background:linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+	background-color:#2dabf9;
+	border-radius:3px;
+	border:1px solid #0b0e07;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:9px 23px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #263666;
+
+&:hover {
+	background:linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+	background-color:#0688fa;
+}
+:active {
+	position:relative;
+	top:1px;
+}
+
+`;
+
 const Incrementar = memo(() => {
   console.log('incrementar');
   const { incrementar } = useContext(Context);
   return (
-    <button onClick={incrementar}>Incrementar (+)</button>
+    
+    <StyledButton onClick={incrementar}>Incrementar (+)</StyledButton>
   );
 });
 
@@ -44,7 +74,7 @@ const Decrementar = memo(() => {
   console.log('decrementar');
   const { decrementar } = useContext(Context);
   return (
-    <button onClick={decrementar}>Decrementar (-)</button>
+    <StyledButton onClick={decrementar}>Decrementar (-)</StyledButton>
   );
 });
 
